@@ -275,3 +275,138 @@ html {
 .about-games__content {
   padding: 32px;
 }
+
+@media screen and (max-width: 1440px) {
+  .header,
+  .bottom-line,
+  .about-games {
+    width: 100%;
+  }
+}
+
+/* Планшеты */
+@media screen and (max-width: 1024px) {
+  .header {
+    height: auto;
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .welcome-text {
+    font-size: 48px;
+    margin-top: 100px;
+  }
+
+  .intro-text {
+    font-size: 20px;
+  }
+
+  .ml-119 {
+    margin-left: 60px;
+  }
+
+  .bottom-line {
+    position: relative;
+    top: auto;
+    margin-top: -91px;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .bottom-line__games:not(:last-child)::after {
+    margin: 30px;
+  }
+
+  .about-games__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-games__block--1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about-games__block--2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .about-games__block--3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .about-games__block--4 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .about-games__block--5 {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
+  }
+  .about-games__block--6 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .about-games__title {
+    font-size: 48px;
+  }
+
+  .about-games__text {
+    font-size: 20px;
+  }
+}
+
+/* Мобильные устройства*/
+@media screen and (max-width: 767px) {
+  .about-games {
+    display: none;
+  }
+
+  .header {
+    min-height: 600px;
+    padding: 20px;
+  }
+
+  .ml-119 {
+    margin-left: 20px;
+  }
+
+  .welcome-text {
+    font-size: 36px;
+    margin-top: 80px;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .intro-button {
+    width: 200px;
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .intro-button:hover {
+    background: rgb(32, 32, 39);
+    transform: none;
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+  }
+
+  .about-games__block:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .bottom-line {
+    height: auto;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .bottom-line__games:not(:last-child)::after {
+    margin: 15px;
+  }
+}
