@@ -278,82 +278,59 @@ html {
 
 @media screen and (max-width: 1440px) {
   .header,
-  .bottom-line,
-  .about-games {
+  .bottom-line {
     width: 100%;
   }
 }
 
 /* Планшеты */
 @media screen and (max-width: 1024px) {
+  .about-games {
+    display: none;
+  }
+
   .header {
     height: auto;
-    min-height: 700px;
-    background-size: cover;
+    min-height: 800px;
+    position: relative;
     background-position: center;
+    background-size: cover;
   }
 
   .welcome-text {
     font-size: 48px;
-    margin-top: 100px;
+    margin-top: 180px;
   }
 
   .intro-text {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .ml-119 {
     margin-left: 60px;
   }
 
+  .intro-button {
+    width: 220px;
+    height: 60px;
+    font-size: 22px;
+  }
+
   .bottom-line {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     top: auto;
-    margin-top: -91px;
-    width: 100%;
-    overflow-x: auto;
+    height: 51px;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    overflow: hidden;
   }
 
   .bottom-line__games:not(:last-child)::after {
     margin: 30px;
-  }
-
-  .about-games__container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-games__block--1 {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .about-games__block--2 {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .about-games__block--3 {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .about-games__block--4 {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .about-games__block--5 {
-    grid-column: 1;
-    grid-row: 3;
-    margin-top: 0;
-  }
-  .about-games__block--6 {
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  .about-games__title {
-    font-size: 48px;
-  }
-
-  .about-games__text {
-    font-size: 20px;
   }
 }
 
@@ -374,7 +351,7 @@ html {
 
   .welcome-text {
     font-size: 36px;
-    margin-top: 80px;
+    margin-top: 100px;
   }
 
   .intro-text {
@@ -388,6 +365,17 @@ html {
     font-size: 20px;
   }
 
+  .bottom-line {
+    height: 51px;
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  .bottom-line__games:not(:last-child)::after {
+    margin: 15px;
+    transform: scale(0.7);
+  }
+
   .intro-button:hover {
     background: rgb(32, 32, 39);
     transform: none;
@@ -398,15 +386,5 @@ html {
   .about-games__block:hover {
     transform: none;
     box-shadow: none;
-  }
-
-  .bottom-line {
-    height: auto;
-    padding: 15px;
-    font-size: 18px;
-  }
-
-  .bottom-line__games:not(:last-child)::after {
-    margin: 15px;
   }
 }
