@@ -1,84 +1,131 @@
 // Задание 1
-let a = 10;
-alert(a);
 
-a = 20;
-alert(a);
+function checkPassword(password) {
+    const truePassword = 'Пароль';
+    let userPassword = prompt('Введите пароль');
+    if (userPassword === truePassword) {
+        alert('Пароль введен верно');
+    } else {
+        alert('Пароль введен неверно');
+    }
+}
 
+checkPassword();
 
 // Задание 2
-const iphoneYear = 2007;
-alert(iphoneYear);
+
+function checkNum(c) {
+    if (c > 0 && c < 10) {
+        alert('Верно');
+    } else {
+        alert('Неверно');
+    }
+}
+
+checkNum(6);
+checkNum(0);
+checkNum(10);
+checkNum(-3);
+checkNum(2);
 
 
-//Задание 3
-const jsCreate = "Брендан Эйх";
-alert(jsCreate);
+// Задание 3
 
-//Задание 4
-let ten = 10;
-let two = 2;
+function checkNums(d, e) {
+    if (d > 100 || e > 100) {
+        alert('Верно');
+    } else {
+        alert('Неверно');
+    }
+}
 
-alert(ten + two);
-alert(ten - two);
-alert(ten / two);
-alert(ten * two);
-alert(ten % two);
+checkNums(66, 666);
 
 
-//Задание 5
-let degree = 2;
+// Задание 4
 
-alert(degree ** 5);
-
-
-// Задание 6
-let a = 9;
-let b = 2;
-
-alert(a % b);
+let a = '2';
+let b = '3';
+// Код выше изменять менять нельзя. Чтобы решить задачу исправьте код ниже:
+alert(+a + +b);
 
 
-// Задание 7
-let num = 1;
-num += 5;
-num -= 3;
-num *= 7;
-num /= 3;
-num++;
-num--;
-alert(num);
+// Задание 5
 
-// Задание 8
-let age = Number(prompt("Сколько Вам лет?"));
-alert(age);
+function checkMonth(month = prompt('Введите номер месяца')) {
+    switch (month) {
+        case '1':
+        case '2':
+        case '12':
+            alert('Зима');
+            break;
+        case '3':
+        case '4':
+        case '5':
+            alert('Весна');
+            break;
+        case '6':
+        case '7':
+        case '8':
+            alert('Лето');
+            break;
+        case '9':
+        case '10':
+        case '11':
+            alert('Осень');
+            break;
+    }
+}
+
+checkMonth();
 
 
-// Задание 9
-let person = {
-    name: "Глеб",
-    age: 32,
-    isAdmin: true
-};
+// Дополнительные задания
+// Задание 1
+
+function checkEvenOdd(userNum = prompt('Пожалуйста, введите любое число')) {
+    let num = Number(userNum);
+    if (isNaN(num)) {
+        alert('Вы ввели не число, введите число');
+        return;
+    }
+    if (num % 2 === 0) {
+        alert('Число четное');
+    } else {
+        alert('Число нечетное');
+    }
+}
+
+checkEvenOdd();
+
+// Задание 2
+
+function checkOS(clientOS) {
+    const androidOS = 1;
+    if (clientOS === androidOS) {
+        console.log('Установите версию приложения для Android по ссылке');
+    } else {
+        console.log('Установите версию приложения для iOS по ссылке');
+    }
+}
 
 
-// Здание 10
+// Задание 3
 
-let name = prompt("Как Вас зовут?");
-alert(`Привет, ${name}!`);
+checkOS();
 
+function checkDeviceYear(clientOS, clientDeviceYear) {
+    const iOSOS = 0;
+    const deviceYear = 2015;
 
-// Задание 11
-let num = Number(prompt("Введите любое число число"));
-
-let doubleNum = num * 2;
-alert(doubleNum);
-
-let plusTen = doubleNum + 10;
-alert(plusTen);
-
-let divideTwo = plusTen / 2;
-alert(divideTwo);
-
-let result = divideTwo - num;
-alert(result);
+    if (clientDeviceYear < deviceYear && clientOS === iOSOS) {
+        console.log("Установите облегченную версию приложения для iOS по ссылке");
+    } else if (clientDeviceYear < deviceYear) {
+        console.log("Установите облегченную версию приложения для Android по ссылке");
+    } else if (clientOS === iOSOS) {
+        console.log("Установите версию приложения для iOS по ссылке");
+    } else {
+        console.log("Установите версию приложения для Android по ссылке");
+    }
+}
+checkDeviceYear();
