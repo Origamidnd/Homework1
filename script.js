@@ -28,7 +28,6 @@ checkNum(10);
 checkNum(-3);
 checkNum(2);
 
-
 // Задание 3
 
 function checkNums(d, e) {
