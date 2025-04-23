@@ -1,131 +1,151 @@
 // Задание 1
 
-function checkPassword(password) {
-    const truePassword = 'Пароль';
-    let userPassword = prompt('Введите пароль');
-    if (userPassword === truePassword) {
-        alert('Пароль введен верно');
-    } else {
-        alert('Пароль введен неверно');
+function massageHello() {
+    for(let i = 1; i <= 2; i++) {
+        console.log("Привет");
     }
 }
 
-checkPassword();
+
+massageHello()
 
 // Задание 2
 
-function checkNum(c) {
-    if (c > 0 && c < 10) {
-        alert('Верно');
-    } else {
-        alert('Неверно');
-    }
+function fiveNums() {
+    for(let i = 1; i <= 5; i++) {
+        console.log(i);
+    } 
 }
 
-checkNum(6);
-checkNum(0);
-checkNum(10);
-checkNum(-3);
-checkNum(2);
-
+fiveNums()
 
 // Задание 3
 
-function checkNums(d, e) {
-    if (d > 100 || e > 100) {
-        alert('Верно');
-    } else {
-        alert('Неверно');
+function sevenNums() {
+    for(let i = 7; i <= 22; i++) {
+        console.log(i)
     }
 }
 
-checkNums(66, 666);
-
+sevenNums()
 
 // Задание 4
 
-let a = '2';
-let b = '3';
-// Код выше изменять менять нельзя. Чтобы решить задачу исправьте код ниже:
-alert(+a + +b);
+const obj = {
+    "Коля": 200,
+    "Вася": 300,
+    "Петя": 400 
+};
+
+for (let key in obj) {
+    console.log(`${key} - зарплата ${obj[key]} долларов`);
+}
 
 
 // Задание 5
 
-function checkMonth(month = prompt('Введите номер месяца')) {
-    switch (month) {
-        case '1':
-        case '2':
-        case '12':
-            alert('Зима');
-            break;
-        case '3':
-        case '4':
-        case '5':
-            alert('Весна');
-            break;
-        case '6':
-        case '7':
-        case '8':
-            alert('Лето');
-            break;
-        case '9':
-        case '10':
-        case '11':
-            alert('Осень');
-            break;
+function oneThousand() {
+    let n = 1000;
+    let num = 0;
+
+    while (n >= 50) {
+        n = n / 2;
+        num++
     }
+
+    console.log("Результат: " + n);
+    console.log("Количество итераций: " + num);
 }
 
-checkMonth();
+oneThousand()
+
+// Задание 6
+
+    function reportFriday () {
+        let firstFriday = 5;
+        for(let day = firstFriday; day <= 31; day += 7) {
+            console.log(`Сегодня пятница, ${day} число. Необходимо подготовить отчет`)
+        }
+    }
+        reportFriday()
+    
 
 
 // Дополнительные задания
 // Задание 1
 
-function checkEvenOdd(userNum = prompt('Пожалуйста, введите любое число')) {
-    let num = Number(userNum);
-    if (isNaN(num)) {
-        alert('Вы ввели не число, введите число');
-        return;
-    }
-    if (num % 2 === 0) {
-        alert('Число четное');
-    } else {
-        alert('Число нечетное');
-    }
-}
+function hundredSeven() {
+    let k = 100;
+    let iterations = 0;
 
-checkEvenOdd();
+    while (k >= 0) {
+        k = k - 7;
+        iterations++
+    }
+
+    console.log("Результат: " + k);
+    console.log("Количество итераций: " + iterations);
+}
+    hundredSeven();
 
 // Задание 2
 
-function checkOS(clientOS) {
-    const androidOS = 1;
-    if (clientOS === androidOS) {
-        console.log('Установите версию приложения для Android по ссылке');
-    } else {
-        console.log('Установите версию приложения для iOS по ссылке');
+function mounthsNumber() {
+    const months = ["Январь",
+                    "Февраль",
+                    "Март",
+                    "Апрель",
+                    "Май",
+                    "Июнь",
+                    "Июль",
+                    "Август",
+                    "Сентябрь",
+                    "Октябрь",
+                    "Ноябрь",
+                    "Декабрь"];
+
+    for (let i = 0; i < months.length; i++) {
+        console.log(`${i + 1}. ${months[i]}`);
     }
 }
+mounthsNumber()
 
 
 // Задание 3
 
 checkOS();
 
-function checkDeviceYear(clientOS, clientDeviceYear) {
-    const iOSOS = 0;
-    const deviceYear = 2015;
+function bookInfo() {
+    const book = {
+        "Название": "Ведьмак (серия книг)",
+        "Автор": "Анджей Сапковский",
+        "Год издания": 1986,
+        "Жанр": "фэнтези, приключения"
+    };
 
-    if (clientDeviceYear < deviceYear && clientOS === iOSOS) {
-        console.log("Установите облегченную версию приложения для iOS по ссылке");
-    } else if (clientDeviceYear < deviceYear) {
-        console.log("Установите облегченную версию приложения для Android по ссылке");
-    } else if (clientOS === iOSOS) {
-        console.log("Установите версию приложения для iOS по ссылке");
-    } else {
-        console.log("Установите версию приложения для Android по ссылке");
+    for (let key in book) { 
+        console.log(`${key}: ${book[key]}`);
     }
 }
-checkDeviceYear();
+
+bookInfo()
+
+
+// Здание 4
+function minNumber() {
+    const numbers = [37, 82, 14, 59, 63, 8, 41, 95, 22, 71];
+
+    console.log("Массив случайных чисел:", numbers);
+    
+    let min = numbers[0];
+    
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+    
+    console.log("Минимальное число в массиве:", min);
+}
+
+minNumber()
