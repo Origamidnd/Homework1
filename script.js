@@ -1,151 +1,156 @@
-// Задание 1
+// Основное задание
 
-function massageHello() {
-    for(let i = 1; i <= 2; i++) {
-        console.log("Привет");
+function startGame() {
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    let guessedCorrectly = false;
+
+    alert("Привет! Начинаем игру 'Угадай Число'.\nЯ загадал число от 1 до 100.");
+
+    while (!guessedCorrectly) {
+        let userInput = prompt("Введи свое предположение (число от 1 до 100). Если хочешь сдаться, нажми 'Отмена'.");
+         if (userInput === null) {
+            alert('Игра окончена.');
+            return;
+        }
+
+         const userGuess = parseInt(userInput);
+
+         if (isNaN(userGuess)) {
+            alert('Ошибка! Введи целое число.');
+            continue;
+        }
+
+        if (userGuess < 1 || userGuess > 100) {
+            alert("Число должно быть в диапазоне от 1 до 100. Попробуй еще раз.");
+            continue;
+        }
+
+        if (userGuess < randomNumber) {
+            alert('Загаданное число БОЛЬШЕ, чем ${userGuess}. Попробуй еще!');
+        } else if (userGuess > randomNumber) {
+            alert('Загаданное число МЕНЬШЕ, чем ${userGuess}. Попробуй еще!');
+        } else {
+    
+            guessedCorrectly = true;
+            alert('🎉 Поздравляю! Ты угадал! Загаданное число было ${randomNumber}.');
+        }
     }
 }
 
 
-massageHello()
+//   Задание 1
+
+function findSmallNum(num1, num2) {
+  if (num1 < num2) {
+    return num1;
+  } else {
+    return num2;
+}
+}
+
+findSmallNum(8, 4)
 
 // Задание 2
 
-function fiveNums() {
-    for(let i = 1; i <= 5; i++) {
-        console.log(i);
-    } 
+function checkEvenOdd(number) {
+  if (number % 2 === 0) {
+    return 'Число четное';
+  } else {
+    return 'Число нечетное';
+  }
 }
 
-fiveNums()
+checkEvenOrOdd(4)
+
 
 // Задание 3
 
-function sevenNums() {
-    for(let i = 7; i <= 22; i++) {
-        console.log(i)
-    }
+function squareNum(number) {
+  const square = number * number;
+  console.log(`Квадрат числа ${number} равен ${square}`);
 }
 
-sevenNums()
+squareNum(5);
 
 // Задание 4
 
-const obj = {
-    "Коля": 200,
-    "Вася": 300,
-    "Петя": 400 
-};
+function checkUserAge() {
+  const ageString = prompt("Сколько вам лет?");
 
-for (let key in obj) {
-    console.log(`${key} - зарплата ${obj[key]} долларов`);
+  if (ageString === null) {
+    alert("Ввод был отменен.");
+    return;
+  }
+
+  const age = parseInt(ageString);
+
+  if (age < 0) {
+    alert('Вы ввели неправильное значение');
+  } 
+
+  else if (age >= 0 && age <= 12) {
+    alert('Привет, друг!');
+  } 
+
+  else if (age >= 13) {
+    alert('Добро пожаловать!');
+  } 
+
+  else {
+    alert('Вы ввели неправильное значение'); 
+  }
 }
 
 
-// Задание 5
+checkUserAge(); 
 
-function oneThousand() {
-    let n = 1000;
-    let num = 0;
+// Задание 5    
 
-    while (n >= 50) {
-        n = n / 2;
-        num++
-    }
+function multiplyIfNumbers(param1, param2) {
+  const num1 = Number(param1);
+  const num2 = Number(param2);
 
-    console.log("Результат: " + n);
-    console.log("Количество итераций: " + num);
+  if (isNaN(num1) || isNaN(num2)) {
+    return 'Одно или оба значения не являются числом';
+  } else {
+    return num1 * num2; [[1]]
+  }
 }
 
-oneThousand()
+multiplyIfNumbers(3, 4);
 
 // Задание 6
 
-    function reportFriday () {
-        let firstFriday = 5;
-        for(let day = firstFriday; day <= 31; day += 7) {
-            console.log(`Сегодня пятница, ${day} число. Необходимо подготовить отчет`)
-        }
-    }
-        reportFriday()
-    
+function numberCube() {
+  const userInput = prompt("Пожалуйста, введите число:");
 
 
-// Дополнительные задания
-// Задание 1
+  const number = Number(userInput); 
 
-function hundredSeven() {
-    let k = 100;
-    let iterations = 0;
-
-    while (k >= 0) {
-        k = k - 7;
-        iterations++
-    }
-
-    console.log("Результат: " + k);
-    console.log("Количество итераций: " + iterations);
-}
-    hundredSeven();
-
-// Задание 2
-
-function mounthsNumber() {
-    const months = ["Январь",
-                    "Февраль",
-                    "Март",
-                    "Апрель",
-                    "Май",
-                    "Июнь",
-                    "Июль",
-                    "Август",
-                    "Сентябрь",
-                    "Октябрь",
-                    "Ноябрь",
-                    "Декабрь"];
-
-    for (let i = 0; i < months.length; i++) {
-        console.log(`${i + 1}. ${months[i]}`);
-    }
-}
-mounthsNumber()
-
-
-// Задание 3
-
-checkOS();
-
-function bookInfo() {
-    const book = {
-        "Название": "Ведьмак (серия книг)",
-        "Автор": "Анджей Сапковский",
-        "Год издания": 1986,
-        "Жанр": "фэнтези, приключения"
-    };
-
-    for (let key in book) { 
-        console.log(`${key}: ${book[key]}`);
-    }
+  if (isNaN(number)) {
+    return 'Переданный параметр не является числом';
+  } else {
+    const cubedNum = number * number * number;
+    return '${number} в кубе равняется ${cubedNum}';
+  }
 }
 
-bookInfo()
+numberCube();
 
+// Задание 7
 
-// Здание 4
-function minNumber() {
-    const numbers = [37, 82, 14, 59, 63, 8, 41, 95, 22, 71];
-
-    console.log("Массив случайных чисел:", numbers);
-    
-    let min = numbers[0];
-    
-    for (let i = 1; i < numbers.length; i++) {
-        if (numbers[i] < min) {
-            min = numbers[i];
-        }
+function createCircle(radius) {
+  const circle = {
+    radius: radius,
+    getArea: function() {
+      return Math.PI * this.radius * this.radius;
+    },
+    getPerimeter: function() {
+      return 2 * Math.PI * this.radius;
     }
-    
-    console.log("Минимальное число в массиве:", min);
+  };
+  return circle;
 }
 
-minNumber()
+createCircle();
