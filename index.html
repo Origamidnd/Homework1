@@ -125,83 +125,83 @@
         </a>
       </div>
     </section>
-
+    
     <section class="mini-games center">
-      <div class="mini-games__container--right">
-        <!-- Карточка 1 -->
-        <div class="mini-games__card" id="game1">
-          <div class="mini-games__content">
-            <div class="mini-games__text">Угадай число</div>
-            <p class="mini-games__description">
-              Попробуй угадать случайное число от 1 до 100
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-          <img class="mini-games__img" src="img/game1.png" alt="game" />
-        </div>
-
-        <!-- Карточка 2 -->
-        <div class="mini-games__card mini-games__card--reversed" id="game2">
-          <img class="mini-games__img" src="img/game2.png" alt="game" />
-          <div class="mini-games__content">
-            <div class="mini-games__text">Простая арифметика</div>
-            <p class="mini-games__description">
-              Решай примеры на сложение, вычитание, умножение и деление
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-        </div>
-
-        <!-- Карточка 3 -->
-        <div class="mini-games__card" id="game3">
-          <div class="mini-games__content">
-            <div class="mini-games__text">Переверни текст</div>
-            <p class="mini-games__description">
-              Введи текст и получи его в обратном порядке
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-          <img class="mini-games__img" src="img/game3.png" alt="game" />
-        </div>
-
-        <!-- Карточка 4 -->
-        <div class="mini-games__card mini-games__card--reversed" id="game4">
-          <img class="mini-games__img" src="img/game5.png" alt="game" />
-          <div class="mini-games__content">
-            <div class="mini-games__text">Викторина</div>
-            <p class="mini-games__description">
-              Проверь свои знания в разных областях
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-        </div>
-
-        <!-- Карточка 5 -->
-        <div class="mini-games__card" id="game5">
-          <div class="mini-games__content">
-            <div class="mini-games__text">Камень, ножницы, бумага</div>
-            <p class="mini-games__description">
-              Сыграй в классическую игру против компьютера
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-          <img class="mini-games__img" src="img/game4.png" alt="game" />
-        </div>
-
-        <!-- Карточка 6 -->
-        <div class="mini-games__card mini-games__card--reversed" id="game6">
-          <img class="mini-games__img" src="img/game6.png" alt="game" />
-          <div class="mini-games__content">
-            <div class="mini-games__text">Генератор случайных чисел</div>
-            <p class="mini-games__description">
-              Игра, в которой при клике на кнопку фон страницы меняется на
-              случайный.
-            </p>
-            <a href="#" class="mini-games__button">Играть!</a>
-          </div>
-        </div>
+    <div class="mini-games__container">
+    <!-- Карточка 1 -->
+    <div class="game-card" id="game1">
+      <div class="game-card__content">
+        <h3 class="game-card__title">Угадай число</h3>
+        <p class="game-card__description">
+          Попробуй угадать случайное число от 1 до 100
+        </p>
+        <button class="game-card__button" onclick="startGameOne()">Играть!</button>
       </div>
-    </section>
+      <img class="game-card__img" src="img/game1.png" alt="game" />
+    </div>
+
+    <!-- Карточка 2 -->
+    <div class="game-card game-card--reversed" id="game2">
+      <img class="game-card__img" src="img/game2.png" alt="game" />
+      <div class="game-card__content">
+        <h3 class="game-card__title">Простая арифметика</h3>
+        <p class="game-card__description">
+          Решай примеры на сложение, вычитание, умножение и деление
+        </p>
+        <button class="game-card__button">Играть!</button>
+      </div>
+    </div>
+
+    <!-- Карточка 3 -->
+    <div class="game-card" id="game3">
+      <div class="game-card__content">
+        <h3 class="game-card__title">Переверни текст</h3>
+        <p class="game-card__description">
+          Введи текст и получи его в обратном порядке
+        </p>
+        <button class="game-card__button">Играть!</button>
+      </div>
+      <img class="game-card__img" src="img/game3.png" alt="game" />
+    </div>
+
+    <!-- Карточка 4 -->
+    <div class="game-card game-card--reversed" id="game4">
+      <img class="game-card__img" src="img/game5.png" alt="game" />
+      <div class="game-card__content">
+        <h3 class="game-card__title">Викторина</h3>
+        <p class="game-card__description">
+          Проверь свои знания в разных областях
+        </p>
+        <button class="game-card__button">Играть!</button>
+      </div>
+    </div>
+
+    <!-- Карточка 5 -->
+    <div class="game-card" id="game5">
+      <div class="game-card__content">
+        <h3 class="game-card__title">Камень, ножницы, бумага</h3>
+        <p class="game-card__description">
+          Сыграй в классическую игру против компьютера
+        </p>
+        <button class="game-card__button">Играть!</button>
+      </div>
+      <img class="game-card__img" src="img/game4.png" alt="game" />
+    </div>
+
+    <!-- Карточка 6 -->
+    <div class="game-card game-card--reversed" id="game6">
+      <img class="game-card__img" src="img/game6.png" alt="game" />
+      <div class="game-card__content">
+        <h3 class="game-card__title">Генератор случайных чисел</h3>
+        <p class="game-card__description">
+          Игра, в которой при клике на кнопку фон страницы меняется на
+          случайный.
+        </p>
+        <button class="game-card__button">Играть!</button>
+      </div>
+    </div>
+  </div>
+</section>
     <footer class="footer center">
       <div class="footer__container">
         <div class="footer__text">Все права защищены.</div>
@@ -210,3 +210,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
