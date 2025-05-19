@@ -1,8 +1,7 @@
 // Основное задание
 
-function startGame() {
+function startGameOne() {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    let attempts = 0;
     let guessedCorrectly = false;
 
     alert("Привет! Начинаем игру 'Угадай Число'.\nЯ загадал число от 1 до 100.");
@@ -27,16 +26,15 @@ function startGame() {
         }
 
         if (userGuess < randomNumber) {
-            alert('Загаданное число БОЛЬШЕ, чем ${userGuess}. Попробуй еще!');
+            alert(`Загаданное число БОЛЬШЕ, чем ${userGuess}. Попробуй еще!`);
         } else if (userGuess > randomNumber) {
-            alert('Загаданное число МЕНЬШЕ, чем ${userGuess}. Попробуй еще!');
+            alert(`Загаданное число МЕНЬШЕ, чем ${userGuess}. Попробуй еще!`);
         } else {
-    
-            guessedCorrectly = true;
-            alert('🎉 Поздравляю! Ты угадал! Загаданное число было ${randomNumber}.');
+                  guessedCorrectly = true;
+        alert(`🎉 Поздравляю! Ты угадал! Загаданное число было ${randomNumber}.`);
         }
+      }
     }
-}
 
 
 //   Задание 1
@@ -125,14 +123,13 @@ multiplyIfNumbers(3, 4);
 function numberCube() {
   const userInput = prompt("Пожалуйста, введите число:");
 
-
   const number = Number(userInput); 
 
   if (isNaN(number)) {
     return 'Переданный параметр не является числом';
   } else {
     const cubedNum = number * number * number;
-    return '${number} в кубе равняется ${cubedNum}';
+    return `${number} в кубе равняется ${cubedNum}`;
   }
 }
 
