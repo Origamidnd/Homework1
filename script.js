@@ -175,7 +175,7 @@ const userGuess = prompt('Угадайте число из массива');
   alert('Не угадал');
 }
 }
-seventhTask()
+// seventhTask()
 
 // Задание 8
 function eighthTask() {
@@ -212,7 +212,7 @@ function tenthTask() {
   return squaredNumbers;
 }
 
-  const numbers = [1, 2, 3, 4, 5];
+  const numbersTask = [1, 2, 3, 4, 5];
   const result = elevenTask(numbers);
   console.log(result);
 
@@ -222,7 +222,7 @@ function tenthTask() {
      return strArray.map(str => str.length);
 }
 
-const words = ["hello", "world", "javascript"];
+const words = [];
 console.log(twelveTask(words));
 
 
