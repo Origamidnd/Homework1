@@ -37,119 +37,225 @@ function startGameOne() {
     }
 
 
-//   Задание 1
+function mathGame() {
+  const operators = ['+', '-', '*', '/'];
+  const operator = operators[Math.floor(Math.random() * 4)];
 
-function findSmallNum(num1, num2) {
-  if (num1 < num2) {
-    return num1;
+  let num1, num2, correctAnswer;
+
+  switch (operator) {
+    case '+':
+      num1 = Math.floor(Math.random() * 50) + 1;
+      num2 = Math.floor(Math.random() * 50) + 1;
+      correctAnswer = num1 + num2;
+      break;
+    
+    case '-':
+      num1 = Math.floor(Math.random() * 50) + 1;
+      num2 = Math.floor(Math.random() * num1) + 1;
+      correctAnswer = num1 - num2;
+      break;
+
+    case '*':
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 * num2;
+      break;
+    
+    case '/':
+      num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = Math.floor(Math.random() * 10) + 1;
+      num1 = num2 * correctAnswer;
+      break;
+  }
+
+
+  let symbol = operator;
+  if (operator === '*') symbol = '×';
+  if (operator === '/') symbol = '÷';
+
+  const userInput = prompt(`Решите: ${num1} ${symbol} ${num2} = ?`);
+  
+  const userAnswer = parseFloat(userInput);
+  
+  if (isNaN(userAnswer)) {
+    alert("Пожалуйста, введите число!");
+  } else if (Math.abs(userAnswer - correctAnswer) < 0.001) {
+    alert("Правильно!");
   } else {
-    return num2;
-}
+    alert(`Неправильно! Правильный ответ: ${correctAnswer}`);
+  }
 }
 
-findSmallNum(8, 4)
+
+//   Задание 1
+function firstTask() {
+  const numbers = [1, 5, 4, 10, 0, 3];
+  for (const element of numbers) {
+    console.log(element);
+    if (element === 10) {
+      break;
+    }
+  }
+}
+
+firstTask()
 
 // Задание 2
 
-function checkEvenOdd(number) {
-  if (number % 2 === 0) {
-    return 'Число четное';
-  } else {
-    return 'Число нечетное';
-  }
+function secondTask() {
+  const array = [1, 5, 4, 10, 0, 3];
+  const index = array.indexOf(4);
+  console.log(index);
 }
 
-checkEvenOrOdd(4)
+secondTask()
 
+// Здание 3
 
-// Задание 3
-
-function squareNum(number) {
-  const square = number * number;
-  console.log(`Квадрат числа ${number} равен ${square}`);
+function thirdTask() {
+  const array = [1, 3, 5, 10, 20];
+  const newArray = array.join(' ');
+  console.log(newArray);
 }
 
-squareNum(5);
+thirdTask()
+
 
 // Задание 4
 
-function checkUserAge() {
-  const ageString = prompt("Сколько вам лет?");
-
-  if (ageString === null) {
-    alert("Ввод был отменен.");
-    return;
-  }
-
-  const age = parseInt(ageString);
-
-  if (age < 0) {
-    alert('Вы ввели неправильное значение');
-  } 
-
-  else if (age >= 0 && age <= 12) {
-    alert('Привет, друг!');
-  } 
-
-  else if (age >= 13) {
-    alert('Добро пожаловать!');
-  } 
-
-  else {
-    alert('Вы ввели неправильное значение'); 
-  }
+function fourthTask() {
+  let array = [];
+  for (let i = 0; i < 3; i++) {
+    array[i] = [];
+    for (let j = 0; j < 3; j++) {
+        array[i][j] = 1;
+    }
 }
 
-
-checkUserAge(); 
-
-// Задание 5    
-
-function multiplyIfNumbers(param1, param2) {
-  const num1 = Number(param1);
-  const num2 = Number(param2);
-
-  if (isNaN(num1) || isNaN(num2)) {
-    return 'Одно или оба значения не являются числом';
-  } else {
-    return num1 * num2; [[1]]
-  }
+console.log(array);
 }
 
-multiplyIfNumbers(3, 4);
+fourthTask()
+
+// Задание 5
+
+function fifthTask() {
+  let array = [1, 1, 1];
+  array.push(2, 2, 2);
+  console.log(array);
+}
+
+fifthTask()
 
 // Задание 6
 
-function numberCube() {
-  const userInput = prompt("Пожалуйста, введите число:");
+function sixthTask() {
+const arr = [9, 8, 7, 'a', 6, 5];
+arr.sort();
 
-  const number = Number(userInput); 
-
-  if (isNaN(number)) {
-    return 'Переданный параметр не является числом';
-  } else {
-    const cubedNum = number * number * number;
-    return `${number} в кубе равняется ${cubedNum}`;
-  }
+const indexOfA = arr.indexOf('a');
+if (indexOfA !== -1) {
+  arr.splice(indexOfA, 1);
 }
 
-numberCube();
+console.log(arr); 
+}
+
+sixthTask()
 
 // Задание 7
 
-function createCircle(radius) {
-  const circle = {
-    radius: radius,
-    getArea: function() {
-      return Math.PI * this.radius * this.radius;
-    },
-    getPerimeter: function() {
-      return 2 * Math.PI * this.radius;
+function seventhTask() {
+const numbers = [9, 8, 7, 6, 5];
+const userGuess = prompt('Угадайте число из массива');
+  if (numbers.includes(Number(userGuess))) {
+  alert('Угадал');
+} else {
+  alert('Не угадал');
+}
+}
+// seventhTask()
+
+// Задание 8
+function eighthTask() {
+  const str = 'abcdef';
+const reversedStr = str.split('').reverse().join('');
+
+console.log(reversedStr);
+}
+eighthTask()
+
+// Задание 9
+function ninthTask() {
+  const array = [[1, 2, 3,],[4, 5, 6]];
+  const newArray = array.flat();
+  console.log(newArray);
+}
+ninthTask()
+
+// Задание 10
+function tenthTask() {
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      console.log(array[i]);
     }
-  };
-  return circle;
+  }
+  }
+  tenthTask()
+
+  // Задание 11
+
+  function elevenTask(numbers) {
+  const squaredNumbers = numbers.map(number => number * number);
+  return squaredNumbers;
 }
 
-createCircle();
-  
+  const numbersTask = [1, 2, 3, 4, 5];
+  const result = elevenTask(numbers);
+  console.log(result);
 
+
+  // Задание 12
+  function twelveTask(words) {
+     return strArray.map(str => str.length);
+}
+
+const words = [];
+console.log(twelveTask(words));
+
+
+// Задание 13
+function thirteenTask(numbers) {
+  return numbers.filter(number => number < 0);
+}
+
+const numbers = [1, -2, 3, -4, 5];
+console.log(thirteenTask(numbers));
+
+// Задание 14
+function fourteenTask(numbers) {
+  const originalArray = [];
+
+for (let i = 0; i < 10; i++) {
+  const randomValue = Math.floor(Math.random() * 11);
+  originalArray.push(randomValue);
+}
+const evenArray = originalArray.filter(number => number % 2 === 0);
+}
+
+// Задание 15
+function fifteenTask(numbers) {
+  const randomNumbers = [];
+
+for (let i = 0; i < 6; i++) {
+  const randomNum = Math.floor(Math.random() * 10) + 1;
+  randomNumbers.push(randomNum);
+}
+let sum = 0;
+for (let i = 0; i < randomNumbers.length; i++) {
+  sum += randomNumbers[i];
+}
+const average = sum / randomNumbers.length;
+}
