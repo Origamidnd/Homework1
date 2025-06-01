@@ -37,119 +37,115 @@ function startGameOne() {
     }
 
 
-//   Задание 1
+function mathGame() {
+  const operators = ['+', '-', '*', '/'];
+  const operator = operators[Math.floor(Math.random() * 4)];
 
-function findSmallNum(num1, num2) {
-  if (num1 < num2) {
-    return num1;
-  } else {
-    return num2;
-}
-}
+  let num1, num2, correctAnswer;
 
-findSmallNum(8, 4)
+  switch (operator) {
+    case '+':
+      num1 = Math.floor(Math.random() * 50) + 1;
+      num2 = Math.floor(Math.random() * 50) + 1;
+      correctAnswer = num1 + num2;
+      break;
+    
+    case '-':
+      num1 = Math.floor(Math.random() * 50) + 1;
+      num2 = Math.floor(Math.random() * num1) + 1;
+      correctAnswer = num1 - num2;
+      break;
 
-// Задание 2
-
-function checkEvenOdd(number) {
-  if (number % 2 === 0) {
-    return 'Число четное';
-  } else {
-    return 'Число нечетное';
-  }
-}
-
-checkEvenOrOdd(4)
-
-
-// Задание 3
-
-function squareNum(number) {
-  const square = number * number;
-  console.log(`Квадрат числа ${number} равен ${square}`);
-}
-
-squareNum(5);
-
-// Задание 4
-
-function checkUserAge() {
-  const ageString = prompt("Сколько вам лет?");
-
-  if (ageString === null) {
-    alert("Ввод был отменен.");
-    return;
+    case '*':
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = num1 * num2;
+      break;
+    
+    case '/':
+      num2 = Math.floor(Math.random() * 10) + 1;
+      correctAnswer = Math.floor(Math.random() * 10) + 1;
+      num1 = num2 * correctAnswer;
+      break;
   }
 
-  const age = parseInt(ageString);
 
-  if (age < 0) {
-    alert('Вы ввели неправильное значение');
-  } 
+  let symbol = operator;
+  if (operator === '*') symbol = '×';
+  if (operator === '/') symbol = '÷';
 
-  else if (age >= 0 && age <= 12) {
-    alert('Привет, друг!');
-  } 
-
-  else if (age >= 13) {
-    alert('Добро пожаловать!');
-  } 
-
-  else {
-    alert('Вы ввели неправильное значение'); 
-  }
-}
-
-
-checkUserAge(); 
-
-// Задание 5    
-
-function multiplyIfNumbers(param1, param2) {
-  const num1 = Number(param1);
-  const num2 = Number(param2);
-
-  if (isNaN(num1) || isNaN(num2)) {
-    return 'Одно или оба значения не являются числом';
-  } else {
-    return num1 * num2; [[1]]
-  }
-}
-
-multiplyIfNumbers(3, 4);
-
-// Задание 6
-
-function numberCube() {
-  const userInput = prompt("Пожалуйста, введите число:");
-
-  const number = Number(userInput); 
-
-  if (isNaN(number)) {
-    return 'Переданный параметр не является числом';
-  } else {
-    const cubedNum = number * number * number;
-    return `${number} в кубе равняется ${cubedNum}`;
-  }
-}
-
-numberCube();
-
-// Задание 7
-
-function createCircle(radius) {
-  const circle = {
-    radius: radius,
-    getArea: function() {
-      return Math.PI * this.radius * this.radius;
-    },
-    getPerimeter: function() {
-      return 2 * Math.PI * this.radius;
-    }
-  };
-  return circle;
-}
-
-createCircle();
+  const userInput = prompt(`Решите: ${num1} ${symbol} ${num2} = ?`);
   
+  const userAnswer = parseFloat(userInput);
+  
+  if (isNaN(userAnswer)) {
+    alert("Пожалуйста, введите число!");
+  } else if (Math.abs(userAnswer - correctAnswer) < 0.001) {
+    alert("Правильно!");
+  } else {
+    alert(`Неправильно! Правильный ответ: ${correctAnswer}`);
+  }
+}
 
+
+function reverseTextGame() {
+    const userText = prompt("Введите текст для переворота:");
+    
+    if (userText === null || userText.trim() === '') {
+        alert("Вы не ввели текст!");
+        return;
+    }
+    
+    const reversedText = userText.split('').reverse().join('');
+    
+    alert(`Перевернутый текст: ${reversedText}`);
+  
+}
+
+
+const quiz = [
+    {
+        question: "Какой цвет неба?",
+        options: ["1. Красный", "2. Синий", "3. Зеленый"],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько дней в неделе?",
+        options: ["1. Шесть", "2. Семь", "3. Восемь"],
+        correctAnswer: 2
+    },
+    {
+        question: "Сколько у человека пальцев на одной руке?",
+        options: ["1. Четыре", "2. Пять", "3. Шесть"],
+        correctAnswer: 2
+    }
+];
+
+function startQuiz() {
+    let correctAnswers = 0;
+    
+    for (let i = 0; i < quiz.length; i++) {
+        const currentQuestion = quiz[i];
+        
+        let questionText = currentQuestion.question + "\n\n";
+        for (let j = 0; j < currentQuestion.options.length; j++) {
+            questionText += currentQuestion.options[j] + "\n";
+        }
+        questionText += "\nВведите номер ответа (1, 2 или 3):";
+        
+        let userAnswer = prompt(questionText);
+        
+        if (userAnswer === null) {
+            alert("Викторина прервана!");
+            return;
+        }
+        
+        userAnswer = parseInt(userAnswer);
+        
+        if (userAnswer === currentQuestion.correctAnswer) {
+            correctAnswers++;
+        }
+    }
+    
+    alert(`Викторина завершена!\nВы ответили правильно на ${correctAnswers} из ${quiz.length} вопросов.`);
+}

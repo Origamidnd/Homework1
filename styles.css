@@ -40,7 +40,7 @@ html {
   margin: 0 auto;
   padding-bottom: 246px;
   box-sizing: border-box;
-}
+} 
 
 .welcome-text {
   font-size: 64px;
@@ -378,6 +378,7 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #000;
 }
+
 
 .footer {
   background-color: rgb(189, 237, 53);
